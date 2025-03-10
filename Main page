@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpportuNet - Find Scholarships</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to OpportuNet</h1>
+        <p>Your gateway to finding scholarships</p>
+    </header>
+    <main>
+        <input type="text" placeholder="Search for scholarships..." id="search-bar">
+        <button onclick="searchScholarships()">Search</button>
+        <div id="results"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
