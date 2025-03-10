@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpportuNet - Find Scholarships</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>OpportuNet</h1>
-        <p>Your gateway to finding scholarships</p>
+<body class="bg-gray-100">
+    <header class="bg-green-600 text-white p-5 text-center shadow-md">
+        <h1 class="text-4xl font-bold">OpportuNet</h1>
+        <p class="text-lg">Your gateway to finding scholarships</p>
     </header>
-
-    <section class="search-container">
-        <input type="text" id="searchInput" placeholder="Search for scholarships...">
-        <button onclick="searchScholarships()">Search</button>
+    
+    <section class="flex justify-center mt-10">
+        <input type="text" id="search" class="p-3 w-1/2 border border-gray-300 rounded-l-md" placeholder="Search for scholarships...">
+        <button onclick="searchScholarships()" class="bg-green-600 text-white px-5 rounded-r-md">Search</button>
     </section>
-
-    <section id="results" class="results-container">
-        <!-- Search results will appear here -->
-    </section>
-
-    <footer>
-        <p>&copy; 2025 OpportuNet. All Rights Reserved.</p>
+    
+    <section id="results" class="mt-10 text-center text-gray-700"></section>
+    
+    <footer class="text-center p-5 text-gray-600 mt-20">
+        &copy; 2025 OpportuNet. All Rights Reserved.
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
