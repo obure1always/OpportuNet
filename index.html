@@ -23,6 +23,21 @@
         .scholarship-card:hover {
             transform: translateY(-5px);
         }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .scroll-to-top:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -54,79 +69,34 @@
     <!-- Scholarships Section -->
     <section class="container mx-auto p-6">
         <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">🌍 Currently Open & Exclusive Scholarships 🎓</h3>
-        
         <div class="staggered-grid">
-            <!-- Scholarship Card 1 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Australia Awards Scholarships 2026</h4>
-                <p><strong>Host Country:</strong> Australia</p>
-                <p><strong>Degree Level:</strong> Bachelors, Masters, PhD</p>
-                <p><strong>Deadline:</strong> 30th April 2025</p>
-                <a href="https://oasis.dfat.gov.au/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
+            <!-- Scholarship Cards -->
+            <script>
+                const scholarships = [
+                    { title: "Australia Awards Scholarships 2026", country: "Australia", level: "Bachelors, Masters, PhD", deadline: "30th April 2025", link: "https://oasis.dfat.gov.au/" },
+                    { title: "Erasmus Mundus Joint Masters 2025", country: "Europe", level: "Masters", deadline: "15th May 2025", link: "https://erasmus-plus.ec.europa.eu/" },
+                    { title: "Chevening Scholarships 2026", country: "UK", level: "Masters", deadline: "10th August 2025", link: "https://www.chevening.org/apply/" },
+                    { title: "KNB Government Scholarship 2025", country: "Indonesia", level: "Bachelors, Masters, PhD", deadline: "31st April 2025", link: "https://opportunitiescorners.com/knb-indonesian-government-scholarship-2025/" },
+                    { title: "DAAD Scholarships 2025", country: "Germany", level: "Masters, PhD", deadline: "15th December 2024", link: "https://www.daad.de/en/" },
+                    { title: "Fulbright Foreign Student Program 2025", country: "USA", level: "Masters, PhD", deadline: "Varies by Country", link: "https://foreign.fulbrightonline.org/apply" },
+                    { title: "Swiss Government Excellence Scholarships 2025", country: "Switzerland", level: "Masters, PhD, Postdoc", deadline: "30th September 2024", link: "https://www.sbfi.admin.ch/scholarships_eng" },
+                    { title: "Gates Cambridge Scholarship 2025", country: "UK", level: "Masters, PhD", deadline: "11th October 2024", link: "https://www.gatescambridge.org/apply/" }
+                ];
+                
+                document.write(scholarships.map(s => `
+                    <div class="scholarship-card">
+                        <h4 class="text-xl font-bold">${s.title}</h4>
+                        <p><strong>Host Country:</strong> ${s.country}</p>
+                        <p><strong>Degree Level:</strong> ${s.level}</p>
+                        <p><strong>Deadline:</strong> ${s.deadline}</p>
+                        <a href="${s.link}" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
+                    </div>
+                `).join(''));
+            </script>
+        </div>
+    </section>
 
-            <!-- Scholarship Card 2 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Erasmus Mundus Joint Masters 2025</h4>
-                <p><strong>Host Region:</strong> Europe</p>
-                <p><strong>Degree Level:</strong> Masters</p>
-                <p><strong>Deadline:</strong> 15th May 2025</p>
-                <a href="https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 3 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Chevening Scholarships 2026</h4>
-                <p><strong>Host Country:</strong> UK</p>
-                <p><strong>Degree Level:</strong> Masters</p>
-                <p><strong>Deadline:</strong> 10th August 2025</p>
-                <a href="https://www.chevening.org/apply/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 4 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">KNB Government Scholarship 2025</h4>
-                <p><strong>Host Country:</strong> Indonesia</p>
-                <p><strong>Degree Level:</strong> Bachelors, Masters, PhD</p>
-                <p><strong>Deadline:</strong> 31st April 2025</p>
-                <a href="https://opportunitiescorners.com/knb-indonesian-government-scholarship-2025/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 5 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">DAAD Scholarships 2025</h4>
-                <p><strong>Host Country:</strong> Germany</p>
-                <p><strong>Degree Level:</strong> Masters, PhD</p>
-                <p><strong>Deadline:</strong> 15th December 2024</p>
-                <a href="https://www.daad.de/en/study-and-research-in-germany/scholarships/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 6 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Fulbright Foreign Student Program 2025</h4>
-                <p><strong>Host Country:</strong> USA</p>
-                <p><strong>Degree Level:</strong> Masters, PhD</p>
-                <p><strong>Deadline:</strong> Varies by Country</p>
-                <a href="https://foreign.fulbrightonline.org/apply" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 7 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Swiss Government Excellence Scholarships 2025</h4>
-                <p><strong>Host Country:</strong> Switzerland</p>
-                <p><strong>Degree Level:</strong> Masters, PhD, Postdoc</p>
-                <p><strong>Deadline:</strong> 30th September 2024</p>
-                <a href="https://www.sbfi.admin.ch/scholarships_eng" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-            </div>
-
-            <!-- Scholarship Card 8 -->
-            <div class="scholarship-card">
-                <h4 class="text-xl font-bold">Gates Cambridge Scholarship 2025</h4>
-                <p><strong>Host Country:</strong> UK</p>
-                <p><strong>Degree Level:</strong> Masters, PhD</p>
-                <p><strong>Deadline:</strong> 11th October 2024</p>
-                <a href="https://www.gatescambridge.org/apply/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
-          <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="bg-blue-600 text-white text-center py-12 mt-8">
         <h3 class="text-2xl font-bold">Stay Ahead with the Latest Scholarships</h3>
         <p class="mt-2">Subscribe to receive updates on new opportunities directly in your inbox.</p>
@@ -137,50 +107,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-6 mt-10">
-        <div class="container mx-auto flex flex-wrap justify-between px-6">
-            <div>
-                <h4 class="text-white font-bold">OpportuNet</h4>
-                <p>Your trusted platform for life-changing scholarships.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold">Quick Links</h4>
-                <ul>
-                    <li><a href="#" class="hover:underline">Home</a></li>
-                    <li><a href="#" class="hover:underline">Scholarships</a></li>
-                    <li><a href="#" class="hover:underline">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-white">🌍 LinkedIn</a>
-                    <a href="#" class="hover:text-white">📘 Facebook</a>
-                    <a href="#" class="hover:text-white">🐦 Twitter</a>
-                </div>
-            </div>
-        </div>
-        <p class="text-center text-gray-500 mt-4">&copy; 2025 OpportuNet. All Rights Reserved.</p>
+    <footer class="bg-gray-900 text-gray-400 py-6 mt-10 text-center">
+        <p>&copy; 2025 OpportuNet. All Rights Reserved.</p>
     </footer>
 
     <!-- Scroll-to-Top Button -->
     <button id="scrollToTop" class="scroll-to-top">↑</button>
-
     <script>
         const scrollToTopBtn = document.getElementById("scrollToTop");
-        
         window.onscroll = function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
+            scrollToTopBtn.style.display = (window.scrollY > 200) ? "block" : "none";
         };
-        
         scrollToTopBtn.onclick = function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
         };
     </script>
-
 </body>
 </html>
