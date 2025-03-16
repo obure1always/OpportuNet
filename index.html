@@ -3,70 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpportuNet - Scholarship Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>OpportuNet - Find Scholarships</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .staggered-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .scholarship-card {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>OpportuNet</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Scholarships</a></li>
-                <li><a href="#">Programs</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#" class="register-btn">Register</a></li>
+<body class="bg-gray-100 text-gray-900">
+    
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">OpportuNet</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#" class="hover:underline">Scholarships</a></li>
+                <li><a href="#" class="hover:underline">Programs</a></li>
+                <li><a href="#" class="hover:underline">Resources</a></li>
+                <li><a href="#" class="hover:underline">Register</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-        <section class="intro">
-            <h2>Transforming Aspirations into Achievements</h2>
-            <p>Your gateway to finding scholarships</p>
-            <input type="text" placeholder="Search for scholarships...">
-            <button>Search</button>
-        </section>
+    <!-- Hero Section -->
+    <section class="text-center py-12 bg-blue-50">
+        <h2 class="text-3xl font-bold">Unlock Your Future with Fully Funded Opportunities</h2>
+        <p class="text-gray-700 mt-2">Discover scholarships tailored for you</p>
+        <div class="mt-6">
+            <input type="text" placeholder="Search for scholarships..." class="px-4 py-2 w-1/2 border rounded-md">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-md ml-2 hover:bg-blue-700">Search</button>
+        </div>
+    </section>
 
-        <section class="scholarships">
-            <h2>Available Scholarships</h2>
-
+    <!-- Scholarships Section -->
+    <section class="container mx-auto p-6">
+        <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">🌍 Currently Open & Exclusive Scholarships 🎓</h3>
+        
+        <div class="staggered-grid">
+            <!-- Scholarship Card 1 -->
             <div class="scholarship-card">
-                <h3>Australia Awards Scholarships 2026</h3>
+                <h4 class="text-xl font-bold">Australia Awards Scholarships 2026</h4>
                 <p><strong>Host Country:</strong> Australia</p>
                 <p><strong>Degree Level:</strong> Bachelors, Masters, PhD</p>
                 <p><strong>Deadline:</strong> 30th April 2025</p>
-                <a href="https://www.dfat.gov.au/people-to-people/australia-awards" target="_blank" class="apply-btn">Apply Now</a>
+                <a href="https://oasis.dfat.gov.au/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
             </div>
 
+            <!-- Scholarship Card 2 -->
             <div class="scholarship-card">
-                <h3>Turkiye Burslari Scholarship 2025</h3>
-                <p><strong>Host Country:</strong> Turkiye</p>
-                <p><strong>Degree Level:</strong> Bachelors, Masters, PhD</p>
-                <p><strong>Deadline:</strong> 20th February 2025</p>
-                <a href="https://www.turkiyeburslari.gov.tr/" target="_blank" class="apply-btn">Apply Now</a>
+                <h4 class="text-xl font-bold">Erasmus Mundus Joint Masters 2025</h4>
+                <p><strong>Host Region:</strong> Europe</p>
+                <p><strong>Degree Level:</strong> Masters</p>
+                <p><strong>Deadline:</strong> 15th May 2025</p>
+                <a href="https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
             </div>
 
+            <!-- Scholarship Card 3 -->
             <div class="scholarship-card">
-                <h3>Ireland Government Scholarship 2025</h3>
-                <p><strong>Host Country:</strong> Ireland</p>
-                <p><strong>Degree Level:</strong> Masters, PhD</p>
-                <p><strong>Deadline:</strong> 5th March 2025</p>
-                <a href="https://hea.ie/" target="_blank" class="apply-btn">Apply Now</a>
+                <h4 class="text-xl font-bold">Chevening Scholarships 2026</h4>
+                <p><strong>Host Country:</strong> UK</p>
+                <p><strong>Degree Level:</strong> Masters</p>
+                <p><strong>Deadline:</strong> 10th August 2025</p>
+                <a href="https://www.chevening.org/apply/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
             </div>
 
+            <!-- Scholarship Card 4 -->
             <div class="scholarship-card">
-                <h3>Brunei Darussalam Government Scholarship 2025</h3>
-                <p><strong>Host Country:</strong> Brunei</p>
-                <p><strong>Degree Level:</strong> Bachelors, Masters, Diploma</p>
-                <p><strong>Deadline:</strong> 15th February 2025</p>
-                <a href="https://www.mfa.gov.bn/" target="_blank" class="apply-btn">Apply Now</a>
+                <h4 class="text-xl font-bold">KNB Government scholarship 2025</h4>
+                <p><strong>Host Country:</strong> Indonesia</p>
+                <p><strong>Degree Level:</strong>Bachelors, Masters, PhD</p>
+                <p><strong>Deadline:</strong> 31st April 2025</p>
+                <a href="https://opportunitiescorners.com/knb-indonesian-government-scholarship-2025/" class="underline text-white font-bold mt-2 inline-block">Apply Now</a>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 OpportuNet. All Rights Reserved.</p>
-    </footer>
+        </div>
+    </section>
 </body>
 </html>
