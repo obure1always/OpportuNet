@@ -1,23 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { getScholarships } from "./api/scholarships"; // Import API function
+import { useEffect, useState } from "react";
 
-function App() {
+function ScholarshipsList() {
   const [scholarships, setScholarships] = useState([]);
 
   useEffect(() => {
-    getScholarships().then(setScholarships);
+    fetch("http://localhost:5000/scholarships") // Ensure the correct API URL
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Scholarships Data:", data); // Debugging
+        setScholarships(data);
+      })
+      .catch((error) => console.error("Error fetching scholarships:", error));
   }, []);
 
   return (
     <div>
       <h1>Scholarship Opportunities</h1>
       <ul>
-        {scholarships.map((scholarship) => (
-          <li key={scholarship.id}>{scholarship.name}</li>
-        ))}
+        {scholarships.length > 0 ? (
+          scholarships.map((scholarship) => (
+            <li key={scholarship.id}>
+              <strong>{scholarship.title}</strong>: {scholarship.description}
+            </li>
+          ))
+        ) : (
+          <p>No scholarships available</p>
+        )}
       </ul>
     </div>
   );
 }
 
-export default App;
+export default ScholarshipsList;
