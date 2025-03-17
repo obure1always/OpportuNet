@@ -1,34 +1,24 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Scholarships from "./pages/Scholarships";
+import Programs from "./pages/Programs";
+import Resources from "./pages/Resources";
+import Navbar from "./components/Navbar"; // Ensure you have a Navbar component
 
-function ScholarshipsList() {
-  const [scholarships, setScholarships] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/scholarships") // Ensure the correct API URL
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Scholarships Data:", data); // Debugging
-        setScholarships(data);
-      })
-      .catch((error) => console.error("Error fetching scholarships:", error));
-  }, []);
-
+function App() {
   return (
-    <div>
-      <h1>Scholarship Opportunities</h1>
-      <ul>
-        {scholarships.length > 0 ? (
-          scholarships.map((scholarship) => (
-            <li key={scholarship.id}>
-              <strong>{scholarship.title}</strong>: {scholarship.description}
-            </li>
-          ))
-        ) : (
-          <p>No scholarships available</p>
-        )}
-      </ul>
-    </div>
+    <Router>
+      <Navbar /> {/* This ensures the Navbar is always visible */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/scholarships" element={<Scholarships />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/resources" element={<Resources />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default ScholarshipsList;
+export default App;
